@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Xmegami Founder</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	font-family: "Comic Sans MS", cursive;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+	color: #FF99CC;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background-color: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background-color: #FFCCFF;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background-color: #FFCCCC;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: left;
+	background-color: #FFC;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background-color: #F69;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background-color: #FF6666;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #CCC49F;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+#apDiv1 {
+	position: absolute;
+	width: 554px;
+	height: 75px;
+	z-index: 1;
+	left: 739px;
+	top: 1035px;
+}
+.footer1 {
+	padding: 10px 0;
+	background-color: #FF9999;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	font-size: smaller;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFF;
+}
+#apDiv2 {	position: absolute;
+	width: 554px;
+	height: 75px;
+	z-index: 1;
+	left: 739px;
+	top: 1035px;
+}
+#apDiv3 {
+	position: absolute;
+	width: 231px;
+	height: 110px;
+	z-index: 1;
+	left: 882px;
+	top: 605px;
+	font-family: Matturra;
+	font-size: larger;
+	color: #FF008A;
+}
+.content h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #E54C8B;
+}
+.container {
+	background-color: #FCC;
+}
+.container .footer1 p {
+	font-family: Verdana, Geneva, sans-serif;
+}
+.content h2 {
+	color: #E54C8B;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.content h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #FF008A;
+}
+-->
+</style>	<!-- Start css3menu.com HEAD section -->
+
+	<link rel="stylesheet" href="Xmegami_founder_files/css3menu0/style.css" type="text/css" /><style type="text/css">._css3m{display:none}</style>
+
+	<!-- End css3menu.com HEAD section -->
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_index.html"><img src="Xmegami logo.png" alt="Insert Logo Here" name="Insert_logo" width="285" height="130" id="Insert_logo" style="background-color: #C6D580; display:block;" /></a>
+    <!-- end .header -->
+  </div>
+  <div class="sidebar1">
+<!-- Start css3menu.com BODY section -->
+
+<input type="checkbox" id="css3menu-switcher" class="c3m-switch-input">
+<ul id="css3menu0" class="topmenu">
+
+	<li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
+	<li class="topfirst"><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_index.html" style="width:153px;">Home</a></li>
+
+	<li class="topmenu"><a href="file:///F:/sem 6/interactive web assignment 1/Xmegami_about us.html" style="width:153px;"><span>About us</span></a>
+
+	<ul>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_founder.html">Founder</a></li>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_core%20value.html">Core Value</a></li>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_product%20brief.html">Product Brief</a></li>
+
+	</ul></li>
+
+	<li class="topmenu"><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_product%20brief.html" style="width:153px;"><span>Products</span></a>
+
+	<ul>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_product%201.html">Misu Dx +</a></li>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_product%202.html">Misu N</a></li>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_product%203.html">Micaree OT Cream</a></li>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_product%204.html">Mifit</a></li>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_effect%20witness.html">Effect Witness</a></li>
+
+	</ul></li>
+
+	<li class="topmenu"><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_Events%20cover.html" style="width:153px;"><span>Events</span></a>
+
+	<ul>
+
+		<li><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_Event_photograph.html">Event Photograph</a></li>
+
+	</ul></li>
+
+	<li class="topmenu"><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_Contact%20us.html" style="width:153px;">Contact us</a></li>
+
+	<li class="topmenu"><a href="file:///F:/sem%206/interactive%20web%20assignment%201/Xmegami_Register.html" style="width:153px;">Register</a></li>
+
+	<li class="toplast"><a href="F:/sem%206/interactive%20web%20assignment%201/Xmegami_News.html" style="width:153px;">News</a></li>
+
+</ul><p class="_css3m"><a href="http://css3menu.com/">css buttons</a> by Css3Menu.com</p>
+
+<!-- End css3menu.com BODY section -->
+
+<p>&nbsp;</p>
+<p><a href="https://www.facebook.com/xmegamiofficial"><img src="fb cion.png" alt="" width="28" height="28" longdesc="https://www.facebook.com/xmegamiofficial" /></a> <a href="https://www.instagram.com/xmegami_official/"><img src="ig icon.png" alt="" width="28" height="28" longdesc="https://www.instagram.com/xmegami_official/" /></a> <a href="https://www.youtube.com/channel/UCT_WN0A4fPYPEeRFORz5saw"><img src="youtube icon.png" alt="" width="32" height="30" longdesc="https://www.youtube.com/channel/UCT_WN0A4fPYPEeRFORz5saw" /></a></p>
+    <p>&nbsp;</p>
+  <!-- end .sidebar1 --></div>
+  <div class="content">
+    <h1>Founder<br /> <img src="founder_Sheue Xin.jpeg" width="340" height="455" /></h1>
+    <p>Sheue Xin was brought up in a family of adequate means. She learnt to be independent and self-disciplinary at a young age. She graduated with a degree in marketing at university. Upon graduation, she worked at a listed company. She did not enjoy the experience, hence she decided to seek out for greater purpose in life in order to help herself and others to live a better life.</p>
+    <p>&ldquo;Talents are to be showcased, not to be wasted!&rdquo;<br />
+      &ldquo;In life, we should always be proactive!&rdquo;<br />
+      &ldquo;We can always change, change ourselves for the better!&rdquo;</p>
+    <p>These believes gave her the courage and self-driven energy to work her way up as a women&rsquo;s icon of this generation.</p>
+    <p>She knew from a very young age that no one can determines her life, but herself. After her resignation, she spent all her savings, a total of RM900, to start an online business. She then never looked back. From the beginning, she sold clothing and skin care products. She gradually refined her products and business strategies and built a positive image for herself. Her team grew as she prospered. She broke records and graduated from a newbies in online business to now, a respectable leader in her industry. It was her passion and innovation that propelled her forward.</p>
+    <p>Throughout this journey, she discovered that everyone has this little flame within them. But to ignite it, one needs to be courageous or else it will get dimmer and eventually, go off. It is not an easy path and people can be resistant to change. Nevertheless, with a strong will, everyone can develop their talents and live up to their potential.</p>
+    <p>&ldquo;I&rsquo;m pleased to share my experience because this is how I changed my life. Most importantly, I believe that you can surpass me!&rdquo;</p>
+    <p>Sheue Xin firmly believes the concept of &ldquo;sharing&rdquo;. She founded Xmegami with Joe Ng. To them, Xmegami is not just a startup platform, it is also a place where they can call home. She is still active in leading her team in expanding market across the world. Education and training of her team are also very close to her heart.</p>
+    <p>Sheue Xin got married in 2013. Currently, she is a mother of two. Together with her husband, they aspire to lead more women and families in attaining a better life.</p>
+    <p>&ldquo;I will be the role model of my children. I believe they, too, can be the best of themselves because I&rsquo;m a living example!&rdquo;</p>
+    <p>Her persistent hard work and strong will have granted her many achievements in life:</p>
+    <p>2015: Received 360 VERSATILE LEADERSHIP AWARD<br />
+      2016: Invited to Beijing for Company Shareholders Meeting<br />
+      2016: Recognised as ASIA E-BUSINESS ENTERPRENEUR of the Year in Macau<br />
+      2017: INTERNATIONAL GOLDEN PHOENIX AWARD by Asia Excellent Entrepreneur Federation<br />
+      2018 - VIETNAM TOP 50 ASIA PACIFIC WOMEN LEADERS AWARD<br />
+      2018 - WINNER OF MALAYSIA TOP 20 YOUNG ENTREPRENEUR OF THE YEAR AWARD 2018<br />
+      2018 - THE MOST PROMINENT BRAND AWARD (XMEGAMI) &amp; EMERGING BRANDS AWARD (Product-MISU)<br />
+      2018 – Invited to CHINA FOR MOST INFLUENTIAL CHINESE BRANDS AWARD from Global Chinese Association<br />
+      2018 - Invited for China CCTV Talk Show 《CHINESE PIONEERS》<br />
+      2018 – Special Guest for online show 'CEO in the Car' S1 EP7, invited by well known DJ/Emcee Jeff Chin<br />
+      2019 - Invited as a Special Appearance in ASTRO CNY Talk Show by Top Feng Shui Master of Malaysia - Louis Loh<br />
+      2019 - Nominated for Ph.D. by Singapore International Brand Federation (IBF)<br />
+      2019 – Invited to TAIWAN FOR CHINESE INTEGRITY BRAND AWARD<br />
+      2019 - 2019 TOP ENTREPRENEURS AWARDS from THE PAGE<br />
+      2019 - FIRST FEMALE ENTRPRENEUR ON THE COVER OF TIME COMMERCIAL MAGAZINE</p>
+    <p>She is blessed with a strong team that believes in her. With this strong force supporting her, she dedicates herself to making dreams possible for other people.</p>
+    <p>&nbsp;</p>
+    <h3><a href="https://youtu.be/dV5GDbRGR2w">Business Era WeChat Phoenix</a></h3>
+    <h3><a href="https://youtu.be/3Xnp1Q1fKp8">Self-improvement</a></h3>
+    <p>&nbsp;</p>
+    <div id="apDiv3">
+      <h3>Shueu Xin</h3>
+      <p><br />
+      </p>
+    </div>
+  </div>
+  <div class="footer1">
+    <p>XMEGAMI SDN BHD<br />
+    No. 2-G, Jalan Bandar Dua Puluh, Pusat Bandar Puchong, 47160 Puchong, Selangor.</p>
+    <p>+603 8080 1268</p>
+    <p><a href="mailto:info@xmegami.com">info@xmegami.com</a></p>
+    <p><a href="mailto:customercare@xmegami.com">customercare@xmegami.com</a></p>
+    <p>&nbsp;</p>
+    <p>© 2018 XMEGAMI Sdn Bhd. All Rights Reserved.</p>
+    <!-- end .footer -->
+  </div>
+  <!-- end .container --></div>
+</body>
+</html>
